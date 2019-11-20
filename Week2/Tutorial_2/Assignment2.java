@@ -6,8 +6,12 @@ public class Assignment2 {
 	}
 }
 
-class SLList {
+//  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  \\
+//  !! BETTER IMPLEMENTATION IS GIVEN IN LINKED_LIST CLASS IN EXTRAS PACKAGE IN SRC FOLDER. !!  \\  
+//  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  \\
 
+class SLList {
+	
 	  class Node {
 
 	    // Each node object has these two fields
@@ -98,13 +102,15 @@ class SLList {
 		  if(head == null) {
 			  addFirst(e);
 			  return;
+		  } else {
+			  Node n = new Node(e, null);
+			  Node tail = head;
+			  while(tail.getNext() != null) {
+				  tail = tail.getNext();
+			  }
+			  tail.setNext(n);
 		  }
-		  Node n = new Node(e, null);
-		  Node tail = head;
-		  while(tail.getNext() != null) {
-			  tail = tail.getNext();
-		  }
-		  tail.setNext(n);
+		  
 	  }
 
 	  /**
@@ -139,7 +145,24 @@ class SLList {
 	   * @return The element of the Node in position pos. If there is no Node in position pos, this method returns null.
 	   */
 	  public Object removeFromPosition(int pos) {
-	    // TODO
+		  if(pos == 0) {
+				return removeFirst();
+			} else if (pos < 0) {
+				return null;
+			}
+			Node current = head;
+			Node previous = head;
+			for (int i = 0; i < pos - 1; i++) {
+				previous = previous.getNext();
+			}
+			current = previous.getNext();
+			
+			if(current.getNext() == null) {
+				previous.setNext(null);
+				return current.getElement();
+			}
+			previous.setNext(current.getNext());
+			return current.getElement();
 	  }
 	}
 
