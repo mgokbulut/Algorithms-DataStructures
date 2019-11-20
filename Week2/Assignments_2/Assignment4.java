@@ -1,7 +1,7 @@
 package Assignments_2;
 
 
-public class Assignment4 {
+public class assignment4 {
 	
 	public static void main(String[] args) {
 		DLList l = new DLList();
@@ -305,7 +305,6 @@ class DLList {
 		Node currentHead = head;
 		Node currentTail = tail;
 		Object temp;
-
 		int s = this.size()/2;
 		
 	    for (int i = 0; i < s; i++) {
@@ -335,7 +334,6 @@ class DLList {
 	    	currentHead = currentHead.getNext();
 	    	currentTail = currentTail.getPrevious();
 	    }
-
 		return result;
 	  }
 	  */
@@ -343,4 +341,3 @@ class DLList {
 	  
 	  
 }
-
