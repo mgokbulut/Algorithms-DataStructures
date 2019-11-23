@@ -6,6 +6,10 @@ public class Insertion_Sort {
 		// TODO Auto-generated method stub
 		
 		int[] a = {101,4,2,6,1,5,4,99,3};
+		int[] b = a.clone();
+		b[0] = 100;
+		System.out.println(a[0]);
+		System.out.println(b[0]);
 		for (int i : a) {
 			System.out.print(i + " ");
 		}

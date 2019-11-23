@@ -1,10 +1,9 @@
 package extras;
 
-
-public class Linked_List {
+public class Singly_Linked_List {
 	public static void main(String[] args) {
 		
-		LinkedList l = new LinkedList();
+		SinglyLinkedList l = new SinglyLinkedList();
 		l.addFirst(new Integer(0));
 		l.addLast(new Integer(1));
 		l.addLast(new Integer(2));
@@ -33,16 +32,16 @@ public class Linked_List {
 
 
 
-class LinkedList {
+class SinglyLinkedList {
 	
 	private Node head;
 
-	public LinkedList(Node head) {
+	public SinglyLinkedList(Node head) {
 		super();
 		this.head = head;
 	}
 	
-	public LinkedList() {
+	public SinglyLinkedList() {
 		super();
 	}
 	

@@ -4,11 +4,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class Linked_List_Test {
-	
+class Singly_Linked_ListTest {
+
 	@Test
 	void get_Test() {
-		LinkedList l = new LinkedList();
+		SinglyLinkedList l = new SinglyLinkedList();
 		l.addFirst(new Integer(0));
 		Integer i = new Integer(0);
 		assertEquals(l.get(0), i);
@@ -16,7 +16,7 @@ class Linked_List_Test {
 	
 	@Test
 	void getLast_Test() {
-		LinkedList l = new LinkedList();
+		SinglyLinkedList l = new SinglyLinkedList();
 		l.addFirst(new Integer(0));
 		Integer i = new Integer(0);
 		assertEquals(l.getLast(), i);
@@ -24,7 +24,7 @@ class Linked_List_Test {
 	
 	@Test
 	void addFirst_test() {
-		LinkedList l = new LinkedList();
+		SinglyLinkedList l = new SinglyLinkedList();
 		l.addFirst(new Integer(0));
 		Integer i = new Integer(0);
 		assertEquals(l.get(0), i, "addFirst method does not work");
@@ -32,7 +32,7 @@ class Linked_List_Test {
 
 	@Test
 	void addLast_test() {
-		LinkedList l = new LinkedList();
+		SinglyLinkedList l = new SinglyLinkedList();
 		l.addFirst(new Integer(0));
 		l.addLast(new Integer(1));
 		l.addLast(new Integer(2));
@@ -43,7 +43,7 @@ class Linked_List_Test {
 	
 	@Test
 	void add_test() {
-		LinkedList l = new LinkedList();
+		SinglyLinkedList l = new SinglyLinkedList();
 		l.addFirst(new Integer(0));
 		l.addLast(new Integer(1));
 		l.addLast(new Integer(2));
@@ -65,7 +65,7 @@ class Linked_List_Test {
 	
 	@Test
 	void removeFromPosition_test() {
-		LinkedList l = new LinkedList();
+		SinglyLinkedList l = new SinglyLinkedList();
 		l.addFirst(new Integer(0));
 		l.addLast(new Integer(1));
 		l.addLast(new Integer(2));
@@ -91,7 +91,7 @@ class Linked_List_Test {
 	
 	@Test
 	void removeLast_test() {
-		LinkedList l = new LinkedList();
+		SinglyLinkedList l = new SinglyLinkedList();
 		l.addFirst(new Integer(0));
 		l.addLast(new Integer(1));
 		l.addLast(new Integer(2));
@@ -103,5 +103,5 @@ class Linked_List_Test {
 		
 		assertNull(l.get(5));
 	}
-	
+
 }
