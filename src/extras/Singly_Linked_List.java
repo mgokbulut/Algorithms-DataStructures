@@ -35,10 +35,12 @@ public class Singly_Linked_List {
 class SinglyLinkedList {
 	
 	private Node head;
-
+	private int size;
+	
 	public SinglyLinkedList(Node head) {
 		super();
 		this.head = head;
+		size++;
 	}
 	
 	public SinglyLinkedList() {
@@ -51,13 +53,15 @@ class SinglyLinkedList {
 
 	public void setHead(Node head) {
 		this.head = head;
+		size++;
 	}
 	
 	//--Methods--//
 	
-
+	
 	public void addFirst(Object e) {
 		head = new Node(e, head);
+		size++;
 	}
 		  
 	public void addLast(Object element) {
@@ -71,6 +75,7 @@ class SinglyLinkedList {
 		}
 		Node node = new Node(element);
 		current.setNext(node);
+		size++;
 	}
 	
 	public void add(Object element, int index) {
@@ -81,6 +86,7 @@ class SinglyLinkedList {
 		
 		if(current.getNext() == null) {
 			current.setNext(new Node(element));
+			size++;
 			return;
 		}
 		//variable temp holds the next node because it 
@@ -88,6 +94,7 @@ class SinglyLinkedList {
 		
 		Node temp = current.getNext();
 		current.setNext(new Node(element, temp));
+		size++;
 	}
 	
 	public Object getLast() {
@@ -117,6 +124,7 @@ class SinglyLinkedList {
 		}
 		Node result = head;
 		head = head.getNext();
+		size--;
 		return result.getData();
 		  
 	}
@@ -136,6 +144,7 @@ class SinglyLinkedList {
 			current = current.getNext();
 		}
 		previous.setNext(null);
+		size--;
 		return current.getData();
 	}
 
@@ -156,9 +165,13 @@ class SinglyLinkedList {
 			}
 		}
 		current = previous.getNext();
-		
 		previous.setNext(current.getNext());
+		size--;
 		return current.getData();
+	}
+	
+	public int size() {
+		return this.size;
 	}
 	
 	class Node {
